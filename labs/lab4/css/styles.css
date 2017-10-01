@@ -1,0 +1,42 @@
+    body{
+        width:100%;
+        text-align:center;
+        color:black;
+        background-image: url('img/sea.jpg');
+                background-size: 100% 100%;
+                background-attachment: fixed;
+    }
+    
+    h2 {
+        color: yellow;
+        -webkit-text-stroke: .4px #000000;
+
+    }
+    
+    input {
+        color: black;
+    }
+    
+    input[type=text] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 22px;
+}
+
+.ins {
+    background-color: blue;
+    padding: 5px;
+    float: left;
+}
+    #carousel-example-generic {
+         margin: 0 auto;   
+         width: 400px;
+         height: auto;
+    }
+    
+    #wrapper {
+         margin: 0 auto;
+     width: 600px;
+     text-align: center;
+    }
