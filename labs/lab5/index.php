@@ -1,4 +1,5 @@
 <?php
+
 /*
 $host = 'localhost'; //cloud 9 database
 $dbname = 'quotes';
@@ -12,7 +13,6 @@ $dbConn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 */
 
 include '../../../dbConnection.php';
-
 $dbConn = getDatabaseConnection();
 
 //This works but it's very time consuming. Not efficient.
@@ -62,7 +62,7 @@ function getRandomQuote() {
     
     //echo($records[$randomIndex]['quoteId']);
     $quoteId = $records[$randomIndex]['quoteId'];
-    
+
     //Step 2: Retreiving quote based on Random Quote Id
     $sql = "SELECT quote, firstName, lastName, authorId 
             FROM q_quote 
@@ -72,8 +72,8 @@ function getRandomQuote() {
     $stmt -> execute();
     $record = $stmt -> fetch(); //using "fetch()" because it's expected to get ONLY ONE record        
     
-    echo  "<em>" . $record['quote']  . "</em><br />";
-    echo "<a href='getAuthorInfo.php?authorId=".$record['authorId']."'>-" . $record['firstName'] . " " . $record['lastName'] . "</a>";
+    echo  "<h3>" . $record['quote']  . "</h3><br />";
+    echo "<a class='authorName' target='authorInfo' href='getAuthorInfo.php?authorId=".$record['authorId']."'>-" . $record['firstName'] . " " . $record['lastName'] . "</a>";
     
     //print_r($records);
 
@@ -92,12 +92,22 @@ function getRandomQuote() {
 <html>
     <head>
         <title> Lab 5: Random Famous Quote Generator </title>
+        
+                    <link href="css/style.css" rel="stylesheet">
+
     </head>
     <body>
+    <div id="wrapper">
 
 
-    <?=getRandomQuote()?>        
+    <?=getRandomQuote()?>  
+    
+    </div>
 
+<br />
+<div id="bioWrapper">
+    <iframe name="authorInfo" width="500" height="300"></iframe>
+    </div>
 
     </body>
 </html>
