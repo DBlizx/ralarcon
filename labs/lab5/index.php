@@ -12,7 +12,7 @@ $dbConn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 $dbConn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 */
 
-include '../../../dbConnection.php';
+include 'dbConnection.php';
 $dbConn = getDatabaseConnection();
 
 //This works but it's very time consuming. Not efficient.
